@@ -4,7 +4,7 @@ export const getUsersForSidebar = async (req,res)=>{
         const loggedinUser = req.user._id
         const filteredUsers= await User.find({_id:{$ne:loggedinUser}}).select("-password")
 
-        res.status(200).json({filteredUsers})
+        res.status(200).json(filteredUsers)
     }catch(err){
         console.error(err);
         res.status(500).json({error:"internal server error"})
