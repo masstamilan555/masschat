@@ -15,7 +15,7 @@ const Messages = () => {
   },[messages])
 
   return (
-    <div className="px-4 flex-1 overflow-auto">
+    <div className="px-4 flex-1 overflow-auto ">
       {!loading && messages.length > 0 && messages.map((msg, index) => {
         const messageContent = typeof msg === 'string' ? { _id: index, message: msg } : msg;
         return <div key={messageContent._id || index} ref={lastMessageRef}> <Message  message={messageContent} /></div>
